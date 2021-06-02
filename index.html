@@ -3,7 +3,7 @@
 <script src="js/anime.min.js"></script>
 <script>
   
-  console.log(document.getElementById(cam).fov)
+  console.log(document.getElementById("#cam").fov);
   function run(id) {
         console.log("#" + id);
         const mid = "#" + id;
@@ -63,7 +63,7 @@
     
   >
     
-  <a-marker preset="hiro" >
+  <a-marker preset="hiro">
     <a-entity
         id="sphere"
         geometry="primitive: box; radius: 1"
