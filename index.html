@@ -22,6 +22,7 @@
               y: 0,
               z: 0,
             });
+            alert('clicked');
           },
           direction: "alternate",
           delay: 268,
@@ -31,7 +32,7 @@
       AFRAME.registerComponent("turn", {
         update: function () {
           this.el.addEventListener("click", function (evt) {
-            alert('clicked');
+            /* alert('clicked'); */
             console.log(this.id);
             run(this.id);
           });
