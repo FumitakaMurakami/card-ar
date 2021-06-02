@@ -37,11 +37,11 @@
       AFRAME.registerComponent("turn", {
         update: function () {
           this.el.addEventListener("click", function (evt) {
-            cam=document.querySelector("#cam")
+            /* cam=document.querySelector("#cam") */
             /* alert('clicked'); */
-            console.log(this.id);
+            /* console.log(this.id); */
             /* alert(cam.fov); */
-            console.log(document.getElementById("#cam").fov);
+            /* console.log(document.getElementById("#cam").fov); */
             run(this.id);
           });
         },
