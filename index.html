@@ -2,6 +2,9 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 <script src="js/anime.min.js"></script>
 <script>
+  window.onload = function() {
+  console.log(document.getElementById(cam).fov)
+};
   function run(id) {
         console.log("#" + id);
         const mid = "#" + id;
@@ -39,9 +42,7 @@
           });
         },
       });
-      window.onload = function() {
-  console.log(document.getElementById(cam).fov)
-};
+      
     </script>
 <style>
   .after-click {
