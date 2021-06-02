@@ -1,0 +1,80 @@
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<script src="node_modules/animejs/lib/anime.min.js"></script>
+<script>
+  function run(id) {
+        console.log("#" + id);
+        const mid = "#" + id;
+        var entity = document.querySelector(mid);
+
+        var test = {
+          posX: 0,
+          posY: 0,
+        };
+
+        anime({
+          targets: test,
+          posY: 0,
+          posX: 180,
+          elasticity: 10000,
+          update: function () {
+            entity.setAttribute("rotation", {
+              x: test.posX,
+              y: 0,
+              z: 0,
+            });
+            alert('clicked');
+          },
+          direction: "alternate",
+          delay: 268,
+          loop: false,
+        });
+      }
+      AFRAME.registerComponent("turn", {
+        update: function () {
+          this.el.addEventListener("click", function (evt) {
+            /* alert('clicked'); */
+            console.log(this.id);
+            run(this.id);
+          });
+        },
+      });
+    </script>
+<style>
+  .after-click {
+    text-align: center;
+    font-size: 1.25em;
+    color: transparent;
+  }
+  
+</style>
+
+
+<body>
+  
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+  >
+    
+  <a-marker preset="hiro">
+    <a-entity
+        id="sphere"
+        geometry="primitive: box; radius: 1"
+        material="color: #cc0000"
+        scale="1 0.5 2"
+        position="0 1 0"
+        turn
+      >
+      </a-entity>
+  </a-marker>
+    </a-nft>
+    <a-entity camera><a-entity
+      cursor="rayOrigin: mouse; fuse:false"
+      material="color: black; shader: flat"
+    >
+    </a-entity>
+  </a-scene>
+</body>
