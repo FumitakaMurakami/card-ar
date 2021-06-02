@@ -81,7 +81,10 @@ init: function() {
   <a-marker preset="hiro" emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6' amarkerhandler>
     <a-entity
                 id="animated-model"
-                gltf-model="#animated-asset"
+                geometry="primitive: box; radius: 1"
+                material="color: #cc0000"
+                scale="1 0.05 2"
+                position="1 0 0"
                 scale="2">
             </a-entity>
     <!-- <a-entity
