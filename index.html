@@ -37,7 +37,7 @@
       AFRAME.registerComponent("turn", {
         update: function () {
           this.el.addEventListener("click", function (evt) {
-            cam=document.getElementById("#cam")
+            cam=document.querySelector("#cam")
             /* alert('clicked'); */
             console.log(this.id);
             alert(cam);
