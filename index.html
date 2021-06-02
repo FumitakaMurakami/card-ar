@@ -31,6 +31,7 @@
       AFRAME.registerComponent("turn", {
         update: function () {
           this.el.addEventListener("click", function (evt) {
+            alert('JavaScriptのアラート');
             console.log(this.id);
             run(this.id);
           });
