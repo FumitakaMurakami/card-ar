@@ -37,11 +37,6 @@
       AFRAME.registerComponent("turn", {
         update: function () {
           this.el.addEventListener("click", function (evt) {
-            /* cam=document.querySelector("#cam") */
-            /* alert('clicked'); */
-            /* console.log(this.id); */
-            /* alert(cam.fov); */
-            /* console.log(document.getElementById("#cam").fov); */
             run(this.id);
           });
         },
@@ -98,11 +93,10 @@
       </a-entity>
   </a-marker>
     
-    <a-entity camera><a-entity
+    <a-entity camera fov="1000"><a-entity
       id="cam"
       cursor="rayOrigin: mouse; fuse:false"
       material="color: black; shader: flat"
-      fov="120"
     >
     </a-entity>
   </a-scene>
